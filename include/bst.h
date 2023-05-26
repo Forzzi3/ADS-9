@@ -19,10 +19,11 @@ class BST {
             root->left = root->right = nullptr;
         } else if (root->value > value) {
             root->left = addNode(root->left, value);
-        } else if (root->value < value)
+        } else if (root->value < value) {
             root->right = addNode(root->right, value);
-        else
+        } else {
             root->count++;
+        }
         return root;
     }
     Node* searchNode(Node* root, const T& value) {
@@ -30,8 +31,7 @@ class BST {
             return root;
         } else if (root->value > value) {
             return searchNode(root->left, value);
-        }
-        else if (root->value < value) {
+        } else if (root->value < value) {
             return searchNode(root->right, value);
         }
     }
@@ -43,7 +43,7 @@ class BST {
     }
 
  public:
-    BST() :root(nullptr){}
+    BST() :root(nullptr){ }
     void add(const T& value) {
         root = addNode(root, value);
     }
