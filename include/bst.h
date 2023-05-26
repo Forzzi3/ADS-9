@@ -34,6 +34,7 @@ class BST {
         } else if (root->value < value) {
             return searchNode(root->right, value);
         }
+        return 0;
     }
     size_t heightTree(Node* root) {
         if (root == nullptr) {
@@ -43,7 +44,7 @@ class BST {
     }
 
  public:
-    BST() :root(nullptr){ }
+    BST() :root(nullptr) {}
     void add(const T& value) {
         root = addNode(root, value);
     }
